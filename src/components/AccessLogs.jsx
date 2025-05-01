@@ -43,7 +43,7 @@ const AccessLogs = ({onAttempt}) => {
       {error && <p className="text-lg text-red-500">{error}</p>}
       
       {loading && <p className="text-lg">Loading...</p>}
-      <ul className="space-y-2 max-h-[500px] overflow-y-scroll">
+      <ul className="text-slate-100 space-y-2 max-h-[500px] overflow-y-scroll">
         {logs.map((log, index) => (
           <li key={index} className="p-4 bg-gray-100 dark:bg-gray-800 rounded-lg">
             <span className="text-lg">{log}</span>

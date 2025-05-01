@@ -16,7 +16,6 @@ function ProfilePage() {
   const [userDetails, setUserDetails] = useState(null);
   const [theme, setTheme] = useState('light');
   const [show, setShow] = useState(false); // state to show who is signed in
-  const [showVideo, setShowVideo] = useState(false);
   const [refreshLogs, setRefreshLogs] = useState(false);
 
   // Load theme from local storage on initial render
@@ -48,9 +47,7 @@ function ProfilePage() {
     setTheme(theme === 'light' ? 'dark' : 'light');
   };
 
-  const toggleVideo = () => {
-    setShowVideo(!showVideo);
-  };
+
 
   const handleRecognitionAttempt = () => {
     // This will trigger a log refresh in the AccessLogs component
@@ -104,14 +101,7 @@ function ProfilePage() {
               <AlarmControl/>
             </div>
             
-            <h2 className='text-xl font-semibold'>Realtime Video Feed</h2>
-            <button
-              onClick={toggleVideo}
-              className="px-6 py-3 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition duration-300"
-            >
-              {showVideo ? 'Hide Video Feed' : 'Show Video Feed'}
-            </button>
-            {showVideo && <VideoFeed />}
+            <VideoFeed />
             
             <div className="grid sm:grid-cols-2 grid-cols-1 gap-4 justify-between">
               <UserManagement/>

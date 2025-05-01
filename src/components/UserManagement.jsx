@@ -41,7 +41,7 @@ const UserManagement = () => {
       <h2 className="text-xl font-semibold mb-4">Manage Users</h2>
       {loading && <p className="text-lg">Loading...</p>}
       {error && <p className="text-lg text-red-500">{error}</p>}
-      <ul className="space-y-2 max-h-[500px] overflow-y-scroll">
+      <ul className="text-slate-100 space-y-2 max-h-[500px] overflow-y-scroll">
         {users.map((user) => (
           <li key={user} className="flex justify-between items-center p-4 bg-gray-100 dark:bg-gray-800 rounded-lg">
             <span className="text-lg">{user}</span>
